@@ -1,0 +1,74 @@
+{
+    "musics": [
+        {
+            "id": 0,
+            "name": "Gone",
+            "singer": "Rose",
+            "path": "./assets/songs/song_1.mp3",
+            "image": "./assets/image/img_1.jpg"
+        },
+        {
+            "id": 1,
+            "name": "ádlasdla",
+            "singer": "Rose",
+            "path": "./assets/songs/song_2.mp3",
+            "image": "./assets/image/img_2.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Gone",
+            "singer": "Rose",
+            "path": "./assets/songs/song_3.mp3",
+            "image": "./assets/image/img_3.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Gone",
+            "singer": "Rose",
+            "path": "./assets/songs/song_4.mp3",
+            "image": "./assets/image/img_4.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Gone",
+            "singer": "Rose",
+            "path": "./assets/songs/song_5.mp3",
+            "image": "./assets/image/img_5.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Gone",
+            "singer": "Rose",
+            "path": "./assets/songs/song_6.mp3",
+            "image": "./assets/image/img_6.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Gone",
+            "singer": "Rose",
+            "path": "./assets/songs/song_7.mp3",
+            "image": "./assets/image/img_7.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Gone",
+            "singer": "Rose",
+            "path": "./assets/songs/song_8.mp3",
+            "image": "./assets/image/img_8.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Gone",
+            "singer": "Rose",
+            "path": "./assets/songs/song_9.mp3",
+            "image": "./assets/image/img_9.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Gone",
+            "singer": "Rose",
+            "path": "./assets/songs/song_10.mp3",
+            "image": "./assets/image/img_10.jpg"
+        }
+    ]
+}
