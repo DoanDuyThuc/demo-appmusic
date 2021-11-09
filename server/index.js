@@ -7,9 +7,13 @@ const db = JSON.parse(fs.readFileSync(__dirname+'/db.json', 'utf-8'))
 const app = express()
 const port = 3000
 
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 // routing
 app.get('/musics', (_req, res) => {
-  res.status(200).send(db)
+  res.status(200).send(db.musics)
 })
 
 // error handler
