@@ -5,6 +5,7 @@ services:
     image: zingmp3
     ports:
       - "3000:3000"
+      - "5000:5000"
     restart: unless-stopped
     env_file: .env
     volumes: 

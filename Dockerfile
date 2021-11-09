@@ -3,6 +3,7 @@ FROM node:12.18-alpine
 WORKDIR /app
 
 RUN npm install -g pm2
+RUN npm install -g serve
 
 COPY ["server/package.json", "server/package-lock.json*", "./server/"]
 
