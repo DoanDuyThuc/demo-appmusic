@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // routing
-app.get('/musics', (_req, res) => {
+app.get('/api/musics', (_req, res) => {
   res.status(200).send(db.musics)
 })
 
