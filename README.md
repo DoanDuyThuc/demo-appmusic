@@ -3,10 +3,10 @@ docker, docker-compose
 
 # Run
 ```bash
-cd music-app
+cd demo-appmusic
 
 # run
-docker build -t music-app
+docker build -t music-app .
 docker-compose up -d
 
 # stop
