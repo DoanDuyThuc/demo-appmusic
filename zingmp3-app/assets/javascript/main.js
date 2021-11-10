@@ -21,6 +21,9 @@ const btnRandom = document.querySelector('.btn-random')
 const btnRepeat = document.querySelector('.btn-repeat')
 const listSongs = document.querySelector('.list-songs')
 const opTion = document.querySelector('.options')
+
+const timer = document.querySelector('.timer')
+const timerRun = document.querySelector('.timer span')
  
 //đặt biến
 let currentIndex = 0;
@@ -196,6 +199,25 @@ function handleEvent(songs) {
             const newTime = Math.floor(audio.currentTime / audio.duration * 100)
             progress.value = newTime
         }
+
+        let minutes = Math.floor(audio.currentTime / 60);
+        let seconds = Math.floor(audio.currentTime - minutes * 60)
+        let minuteValue;
+        let secondValue;
+
+        if(minutes < 10){
+            minuteValue = '0' + minutes
+        }else{
+            minuteValue = minutes
+        }
+
+        if(seconds < 10){
+            secondValue = '0' + seconds
+        }else{
+            secondValue = seconds
+        }
+
+        timerRun.innerHTML = minuteValue + ":" + secondValue
     }
 
     //tua video
