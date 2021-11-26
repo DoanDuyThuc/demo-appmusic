@@ -2,6 +2,7 @@
 const songs = 'http://localhost:3000/musics'
 
 //get elemet
+const boderFigure = document.querySelector('figure')
 const cd = document.querySelector('.cd')
 const cdBtn = document.querySelector('.cd-btn')
 const cdImg = document.querySelector('.cd figure .cd-img_songs')
@@ -12,6 +13,7 @@ const controls = document.querySelector('.controls')
 const play  = document.querySelector('.btn-play') 
 const actionsBtn = document.querySelector('.actions-btn')
 const actionsBtnSpan = document.querySelector('.actions span')
+const footerFirst = document.querySelector('.fooder-first_img')
 const footerImg = document.querySelector('.fooder-first_img img')
 const btnForward = document.querySelector('.btn-forward')
 const btnBackward = document.querySelector('.btn-backward')
@@ -21,7 +23,7 @@ const btnRandom = document.querySelector('.btn-random')
 const btnRepeat = document.querySelector('.btn-repeat')
 const listSongs = document.querySelector('.list-songs')
 const opTion = document.querySelector('.options')
-
+const firstImgHold = document.querySelectorAll('.fooder-first_img i')
 const timer = document.querySelector('.timer')
 const timerRun = document.querySelector('.timer span')
  
@@ -90,6 +92,18 @@ function getElementFirst(songs) {
 
 
 function handleEvent(songs) {
+
+     // xữ lý hoạt ảnh guitar anh music running
+     function animationRunningMusic() {
+        var hold = 0
+        var holdl = setInterval(function () {
+            firstImgHold[hold].classList.add('rotate-music')  
+            hold ++
+            if(hold > firstImgHold.length - 1){
+                clearInterval(holdl)
+            }
+        },1200)  
+    }
     
     //hàm next song
     function nextsongs() {
@@ -144,12 +158,10 @@ function handleEvent(songs) {
         index.onclick = function () {
             if(isplaying){
                 audio.pause()
-                rotateCd.pause()
                 rotatefooter.pause()
                 
             }else {
                 audio.play()
-                rotateCd.play()
                 rotatefooter.play()
                 
             }
@@ -158,6 +170,9 @@ function handleEvent(songs) {
     
     audio.onplay = function () {
         isplaying = true
+        footerFirst.classList.remove('paused')
+        animationRunningMusic()
+        cdImg.classList.add('turn')
         cdBtn.classList.add('playing')
         controls.classList.add('playing')
         actionsBtn.classList.add('playing')
@@ -166,20 +181,13 @@ function handleEvent(songs) {
     
     audio.onpause = function () {
         isplaying = false
+        footerFirst.classList.add('paused')
+        cdImg.classList.remove('turn')
         cdBtn.classList.remove('playing')
         controls.classList.remove('playing')
         actionsBtn.classList.remove('playing')
         actionsBtnSpan.textContent ='TIẾP TỤC PHÁT'
     }
-
-    // quay đĩa
-    const rotateCd = cdImg.animate([
-        {transform: 'rotate(0deg)'},
-        {transform: 'rotate(360deg)'}
-    ], {
-        duration: 8000,
-        iterations: Infinity
-    })
 
     // quay đĩa
     const rotatefooter = footerImg.animate([
@@ -191,7 +199,6 @@ function handleEvent(songs) {
     })
 
     rotatefooter.pause()
-    rotateCd.pause()
 
     // thanh input progress chạy theo nhạc'
     audio.ontimeupdate = function () {
@@ -291,7 +298,6 @@ function handleEvent(songs) {
                 songsActive()
                 getElementFirst(songs)
                 audio.play()
-                rotateCd.play()
                 rotatefooter.play()
             }
             if(e.target.closest('.list-songs_right .menu-choose')){
